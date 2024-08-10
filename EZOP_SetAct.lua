@@ -234,12 +234,17 @@ function EZOP_SetAct_ApproachBoostRise(f11_arg0, f11_arg1, f11_arg2, f11_arg3, f
     return { EZOP_OPERATION.MOVE_BOOST_RISE, f11_arg1, { f11_arg9, f11_arg1, f11_arg2, f11_arg7, f11_arg6, f11_arg3, f11_arg4, f11_arg5, f11_arg8, f11_arg10, f11_arg11, f11_arg16 }, { { f11_arg14, EZOP_OpEndChk_CloserThan, { f11_arg2, f11_arg8, EZOP_ARRIVE_JUDGE_TYPE._CapsuleToCapsule } }, { f11_local0 } }, false, { f11_arg12, f11_arg13 } }
 end
 
-function EZOP_SetAct_QuickBoost(f12_arg0, f12_arg1, f12_arg2, f12_arg3, f12_arg4, f12_arg5, f12_arg6, f12_arg7, f12_arg8,
-                                f12_arg9)
-    if f12_arg9 == nil then
-        f12_arg9 = "next"
+function EZOP_SetAct_QuickBoost(ai, float_arg, target, angle_relative_to_target, actions_arg, check_func,
+                                check_func_params)
+    if TransAct == nil then
+        TransAct = "next"
     end
-    return { EZOP_OPERATION.QUICK_BOOST_FORMAL, f12_arg1, { f12_arg4, f12_arg1, f12_arg2, EZOP_MOVETYPE._QB_FORMAL, f12_arg3, 1, f12_arg7, f12_arg8 }, { { f12_arg9 } }, false, { f12_arg5, f12_arg6 } }
+    return { EZOP_OPERATION.QUICK_BOOST_FORMAL,
+        float_arg,
+        { angle_relative_to_target, float_arg, target, EZOP_MOVETYPE._QB_FORMAL, UNK_FLOAT, 1, InterruptSetupFunc, InterruptFunc },
+        { { TransAct } },
+        false,
+        { check_func, check_func_params } }
 end
 
 function EZOP_SetAct_QuickBoostAlt(f13_arg0, f13_arg1, f13_arg2, f13_arg3, f13_arg4, f13_arg5, f13_arg6, f13_arg7,

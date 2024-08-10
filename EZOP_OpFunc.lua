@@ -650,7 +650,6 @@ local f0_local5 = function(ai, f34_arg1, f34_arg2, f34_arg3, f34_arg4, f34_arg5,
 end
 
 function EZOP_OpFunc_Wait(ai, f35_arg1, f35_arg2, arg_map)
-    Log("EZOP_OpFunc_Wait fired")
     local f35_local0 = arg_map[2]
     local f35_local1 = arg_map[3]
     local f35_local2 = arg_map[4]
@@ -1739,7 +1738,6 @@ local real_movement_func = function(ai, f71_arg1, f71_arg2, f71_arg3, f71_arg4)
 end
 
 function EZOP_OpFunc_MoveType(ai, f72_arg1, f72_arg2, f72_arg3)
-    Log("EZOP_OpFunc_MoveType fired (aka, quickboost_formal)")
     local f72_local0 = f72_arg3[2]
     local f72_local1 = f72_arg3[3]
     local f72_local2 = f72_arg3[4]
