@@ -278,3 +278,4 @@ In short, here's the approach I take to documenting the EZOP_SetAct functions:
     -Get the EZOP_OPERATION from the SetAct return value (and the arguments sent to it)
     -Check EZOP_OPERATION_SET_FORMATTED to see the various layers
     -Figure out what all the arguments are from there
+    

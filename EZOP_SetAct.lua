@@ -63,11 +63,11 @@ function EZOP_SetAct_ClearOperation(f1_arg0, f1_arg1)
     return { EZOP_OPERATION.CLEAR_OPERATION, f1_arg1, { nil }, { { TransAct } }, false }
 end
 
-function EZOP_SetAct_Wait(ai, f2_arg1, f2_arg2, InterruptSetupFunc_arg, InterruptFunc_arg, f2_arg5)
+function EZOP_SetAct_Wait(ai, wait_duration, target, InterruptSetupFunc_arg, InterruptFunc_arg, f2_arg5)
     if f2_arg5 == nil then
         f2_arg5 = "next"
     end
-    return { EZOP_OPERATION.WAIT, f2_arg1, { nil, f2_arg1, f2_arg2, InterruptSetupFunc_arg, InterruptFunc_arg }, { { f2_arg5 } }, false }
+    return { EZOP_OPERATION.WAIT, wait_duration, { nil, wait_duration, target, InterruptSetupFunc_arg, InterruptFunc_arg }, { { f2_arg5 } }, false }
 end
 
 function EZOP_SetAct_ApproachTarget(ai, unk_float_arg, target, turn_target_type, movement_type, desired_target_distance,
@@ -141,48 +141,23 @@ function EZOP_SetAct_ApproachTarget_NoNavi_SandWorm(ai, f5_arg1, f5_arg2, f5_arg
     return { EZOP_OPERATION.MOVE_APPROACH, f5_arg1, { f5_arg6, f5_arg1, f5_arg2, f5_arg4, f5_arg3, f5_arg5, f5_arg7, f5_arg8, false }, { { f5_arg11, EZOP_OpEndChk_CloserThanXZ, { f5_arg2, f5_arg5, EZOP_ARRIVE_JUDGE_TYPE._CapsuleToCapsule } }, { f5_local0 } }, true, { f5_arg9, f5_arg10 } }
 end
 
-function EZOP_SetAct_LeaveTarget(f6_arg0, f6_arg1, f6_arg2, f6_arg3, f6_arg4, f6_arg5, f6_arg6, f6_arg7, f6_arg8, f6_arg9,
-                                 f6_arg10, f6_arg11, f6_arg12)
-    if f6_arg11 == nil then
-        f6_arg11 = "next"
+function EZOP_SetAct_LeaveTarget(ai, unk_float_arg, target, turn_target_type, movement_type, desired_distance,
+                                 actions_to_take_once_far_enough, interrupt_setup_func, interrupt_handlers, TransAct_arg,
+                                 unk_bool_arg)
+    if TransAct_arg == nil then
+        TransAct_arg = "next"
     end
-    local f6_local0 = nil
-    if f6_arg12 == true then
-        f6_local0 = f6_arg11
+    local TransAct_if_unk_bool_true = nil
+    if unk_bool_arg == true then
+        TransAct_if_unk_bool_true = TransAct_arg
     end
-    return {
-        EZOP_OPERATION.MOVE_LEAVE,
-        f6_arg1,
-        {
-            f6_arg6,
-            f6_arg1,
-            f6_arg2,
-            f6_arg4,
-            f6_arg5,
-            f6_arg3,
-            f6_arg7,
-            f6_arg8
-        },
-        {
-            {
-                f6_arg11,
-                EZOP_OpEndChk_FartherThan,
-                {
-                    f6_arg2,
-                    f6_arg5,
-                    EZOP_ARRIVE_JUDGE_TYPE._CapsuleToCapsule
-                }
-            },
-            {
-                f6_local0
-            }
-        },
+    return { EZOP_OPERATION.MOVE_LEAVE,
+        unk_float_arg,
+        { actions_to_take_once_far_enough, unk_float_arg, target, movement_type, turn_target_type, desired_distance, interrupt_setup_func, interrupt_handlers },
+        { { TransAct_arg,           EZOP_OpEndChk_FartherThan, { target, desired_distance, EZOP_ARRIVE_JUDGE_TYPE._CapsuleToCapsule } },
+            { TransAct_if_unk_bool_true } },
         false,
-        {
-            f6_arg9,
-            f6_arg10
-        }
-    }
+        { TransAct_arg,                    unk_bool_arg } }
 end
 
 function EZOP_SetAct_SideWayMove(f7_arg0, f7_arg1, f7_arg2, f7_arg3, f7_arg4, f7_arg5, f7_arg6, f7_arg7, f7_arg8, f7_arg9,

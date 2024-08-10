@@ -1,6 +1,5 @@
 function EZOP_Replanning(f1_arg0)
     f1_arg0:RequestCallOperation(LAYER_ID_OP_LOT_CTRL)
-    
 end
 
 function EZOP_isSpecialStay(ai)
@@ -13,7 +12,6 @@ function EZOP_isSpecialStay(ai)
         end
     end
     return hasEffect
-    
 end
 
 function EZOP_isCoverAction(ai)
@@ -26,37 +24,30 @@ function EZOP_isCoverAction(ai)
         end
     end
     return hasEffect
-    
 end
 
 function EZOP_isLeandAction(f4_arg0)
     return f4_arg0:HasSpecialEffectId(TARGET_SELF, 99992010)
-    
 end
 
 function EZOP_isModeA(f5_arg0)
     return f5_arg0:HasSpecialEffectId(TARGET_SELF, 99991000)
-    
 end
 
 function EZOP_isModeB(f6_arg0)
     return f6_arg0:HasSpecialEffectId(TARGET_SELF, 99991001)
-    
 end
 
 function EZOP_isModeC(f7_arg0)
     return f7_arg0:HasSpecialEffectId(TARGET_SELF, 99991002)
-    
 end
 
 function EZOP_isModeD(f8_arg0)
     return f8_arg0:HasSpecialEffectId(TARGET_SELF, 99991003)
-    
 end
 
 function EZOP_isModeE(f9_arg0)
     return f9_arg0:HasSpecialEffectId(TARGET_SELF, 99991004)
-    
 end
 
 function EZOP_HasAnySpecialEffect(f10_arg0, f10_arg1, f10_arg2)
@@ -66,8 +57,6 @@ function EZOP_HasAnySpecialEffect(f10_arg0, f10_arg1, f10_arg2)
         end
     end
     return false
-    
-
 end
 
 function EZOP_TakeOutValue(f11_arg0, f11_arg1)
@@ -92,13 +81,14 @@ function EZOP_TakeOutValue(f11_arg0, f11_arg1)
     elseif f11_arg1 == 8 then
         return f11_arg0[1], f11_arg0[2], f11_arg0[3], f11_arg0[4], f11_arg0[5], f11_arg0[6], f11_arg0[7], f11_arg0[8]
     elseif f11_arg1 == 9 then
-        return f11_arg0[1], f11_arg0[2], f11_arg0[3], f11_arg0[4], f11_arg0[5], f11_arg0[6], f11_arg0[7], f11_arg0[8], f11_arg0[9]
+        return f11_arg0[1], f11_arg0[2], f11_arg0[3], f11_arg0[4], f11_arg0[5], f11_arg0[6], f11_arg0[7], f11_arg0[8],
+            f11_arg0[9]
     elseif f11_arg1 == 10 then
-        return f11_arg0[1], f11_arg0[2], f11_arg0[3], f11_arg0[4], f11_arg0[5], f11_arg0[6], f11_arg0[7], f11_arg0[8], f11_arg0[9], f11_arg0[10]
+        return f11_arg0[1], f11_arg0[2], f11_arg0[3], f11_arg0[4], f11_arg0[5], f11_arg0[6], f11_arg0[7], f11_arg0[8],
+            f11_arg0[9], f11_arg0[10]
     else
         return -1
     end
-    
 end
 
 function EZOP_SetCoolTime(f12_arg0, f12_arg1, f12_arg2, f12_arg3, f12_arg4)
@@ -108,7 +98,6 @@ function EZOP_SetCoolTime(f12_arg0, f12_arg1, f12_arg2, f12_arg3, f12_arg4)
         return true
     end
     return false
-    
 end
 
 function EZOP_PointCheck_BasePointSquare(f13_arg0, f13_arg1, f13_arg2, f13_arg3)
@@ -145,7 +134,6 @@ function EZOP_PointCheck_BasePointSquare(f13_arg0, f13_arg1, f13_arg2, f13_arg3)
         return true
     end
     return false
-    
 end
 
 function EZOP_PointCheck_BasePointSquareAsync(f14_arg0, f14_arg1, f14_arg2)
@@ -178,32 +166,26 @@ function EZOP_PointCheck_BasePointSquareAsync(f14_arg0, f14_arg1, f14_arg2)
         return true
     end
     return false
-    
 end
 
 function EZOP_ResetAsyncNavCheckTargetSet(f15_arg0, f15_arg1, f15_arg2)
     EZOP_AsyncNavCheckTargetSet[f15_arg1][f15_arg2] = {}
-    
 end
 
 function EZOP_IsPossibleCoverAction(f16_arg0)
     return f16_arg0:HasSpecialEffectId(TARGET_SELF, 99993300)
-    
 end
 
 function EZOP_PointCheck_Cover(f17_arg0, f17_arg1, f17_arg2)
     return EZOP_PointCheck_BasePointSquare(f17_arg0, f17_arg1, f17_arg2, true)
-    
 end
 
 function EZOP_PointCheck_CoverAsync(f18_arg0, f18_arg1, f18_arg2)
     return EZOP_PointCheck_BasePointSquareAsync(f18_arg0, f18_arg1, f18_arg2, true)
-    
 end
 
 function EZOP_PointCheck_Snipe(f19_arg0, f19_arg1, f19_arg2)
     return EZOP_PointCheck_BasePointSquare(f19_arg0, f19_arg1, f19_arg2, false)
-    
 end
 
 function EZOP_PointCheck_ShootAssetAsync(f20_arg0, f20_arg1, f20_arg2)
@@ -213,7 +195,6 @@ function EZOP_PointCheck_ShootAssetAsync(f20_arg0, f20_arg1, f20_arg2)
         f20_local0 = true
     end
     return f20_local0
-    
 end
 
 function EZOP_PointCheck_Snipe(f21_arg0, f21_arg1, f21_arg2)
@@ -230,7 +211,6 @@ function EZOP_PointCheck_Snipe(f21_arg0, f21_arg1, f21_arg2)
         return true
     end
     return false
-    
 end
 
 function EZOP_PointChoice_Snipe(f22_arg0, f22_arg1)
@@ -251,8 +231,6 @@ function EZOP_PointChoice_Snipe(f22_arg0, f22_arg1)
         return true
     end
     return false
-    
-
 end
 
 function EZOP_ReservePoint(f23_arg0, f23_arg1)
@@ -261,18 +239,15 @@ function EZOP_ReservePoint(f23_arg0, f23_arg1)
         return true
     end
     return false
-    
 end
 
 function EZOP_IsPointReserved(f24_arg0)
     return f24_arg0:IsAiDestinationPointReserved()
-    
 end
 
 function EZOP_UnreservePoint(f25_arg0)
     f25_arg0:UnreserveAiDestinationPoint()
     f25_arg0:SetNumber(VALUE_ID_IS_POINT_RESERVED, 0)
-    
 end
 
 function EZOP_ReserveDefencePoint(f26_arg0, f26_arg1)
@@ -281,31 +256,28 @@ function EZOP_ReserveDefencePoint(f26_arg0, f26_arg1)
         return true
     end
     return false
-    
 end
 
 function EZOP_IsDefenceReserved(f27_arg0)
     return f27_arg0:IsDefencePointReserved()
-    
 end
 
 function EZOP_UnreserveDefencePoint(f28_arg0)
     f28_arg0:UnreserveDefencePoint()
     f28_arg0:SetNumber(VALUE_ID_IS_DEFENCE_RESERVED, 0)
-    
 end
 
-function EZOP_InsideRange(ai, f29_arg1, f29_arg2, f29_arg3, f29_arg4)
-    local distance = ai:GetDist(TARGET_ENE_0)
-    if f29_arg3 <= distance and distance <= f29_arg4 then
-        local f29_local1 = ai:GetToTargetAngle(TARGET_ENE_0)
-        local f29_local2 = 0
-        if f29_arg1 < 0 then
-            f29_local2 = -1
+function EZOP_InsideRange(ai, angle_min, angle_max, range_min, range_max)
+    local distance_to_target = ai:GetDist(TARGET_ENE_0)
+    if range_min <= distance_to_target and distance_to_target <= range_max then
+        local angle_to_target = ai:GetToTargetAngle(TARGET_ENE_0)
+        local sign_multiplier = 0
+        if angle_min < 0 then
+            sign_multiplier = -1
         else
-            f29_local2 = 1
+            sign_multiplier = 1
         end
-        if f29_arg1 + f29_arg2 / -2 <= f29_local1 and f29_local1 <= f29_arg1 + f29_arg2 / 2 or f29_arg1 + f29_arg2 / -2 <= f29_local1 + 360 * f29_local2 and f29_local1 + 360 * f29_local2 <= f29_arg1 + f29_arg2 / 2 then
+        if angle_min + angle_max / -2 <= angle_to_target and angle_to_target <= angle_min + angle_max / 2 or angle_min + angle_max / -2 <= angle_to_target + 360 * sign_multiplier and angle_to_target + 360 * sign_multiplier <= angle_min + angle_max / 2 then
             return true
         else
             return false
@@ -313,7 +285,6 @@ function EZOP_InsideRange(ai, f29_arg1, f29_arg2, f29_arg3, f29_arg4)
     else
         return false
     end
-    
 end
 
 function EZOP_OverlapTriggerOperation(f30_arg0, f30_arg1, f30_arg2)
@@ -329,8 +300,8 @@ function EZOP_OverlapTriggerOperation(f30_arg0, f30_arg1, f30_arg2)
     local f30_local9 = f30_arg2[10]
     local f30_local10 = f30_arg2[11]
     local f30_local11 = f30_arg2[12]
-    f30_arg0:SetupOperation(f30_arg1, AI_OPERATION_Weapon_Ver102, f30_local1, f30_local2, f30_local3, f30_local0, f30_local4, f30_local5, f30_local6, f30_local7, f30_local8, f30_local9, f30_local10, f30_local11)
-    
+    f30_arg0:SetupOperation(f30_arg1, AI_OPERATION_Weapon_Ver102, f30_local1, f30_local2, f30_local3, f30_local0,
+        f30_local4, f30_local5, f30_local6, f30_local7, f30_local8, f30_local9, f30_local10, f30_local11)
 end
 
 function EZOP_GetDBRiskCategori(f31_arg0, f31_arg1)
@@ -340,7 +311,6 @@ function EZOP_GetDBRiskCategori(f31_arg0, f31_arg1)
         f31_local0 = math.floor(f31_local0)
     end
     return f31_local0
-    
 end
 
 function EZOP_RandomLR(ai)
@@ -350,7 +320,6 @@ function EZOP_RandomLR(ai)
     else
         return -1
     end
-    
 end
 
 function EZOP_DBAnglefS_LR(f33_arg0)
@@ -360,10 +329,10 @@ function EZOP_DBAnglefS_LR(f33_arg0)
     else
         return 1
     end
-    
 end
 
-function EZOP_CActLot(f34_arg0, f34_arg1, f34_arg2, f34_arg3, f34_arg4, f34_arg5, f34_arg6, f34_arg7, f34_arg8, f34_arg9, f34_arg10, f34_arg11, f34_arg12, f34_arg13)
+function EZOP_CActLot(f34_arg0, f34_arg1, f34_arg2, f34_arg3, f34_arg4, f34_arg5, f34_arg6, f34_arg7, f34_arg8, f34_arg9,
+                      f34_arg10, f34_arg11, f34_arg12, f34_arg13)
     if f34_arg4 == nil then
         f34_arg4 = true
     end
@@ -399,7 +368,6 @@ function EZOP_CActLot(f34_arg0, f34_arg1, f34_arg2, f34_arg3, f34_arg4, f34_arg5
     else
         f34_arg0[f34_arg1] = f34_arg3
     end
-    
 end
 
 function HAGI_InsideRange(ai, f35_arg1, f35_arg2, f35_arg3, f35_arg4)
@@ -420,7 +388,6 @@ function HAGI_InsideRange(ai, f35_arg1, f35_arg2, f35_arg3, f35_arg4)
     else
         return false
     end
-    
 end
 
 function HAGI_EventInsideRange(ai, f36_arg1, f36_arg2, f36_arg3, f36_arg4)
@@ -441,19 +408,18 @@ function HAGI_EventInsideRange(ai, f36_arg1, f36_arg2, f36_arg3, f36_arg4)
     else
         return false
     end
-    
 end
 
 function EZOP_DBChk_SpeedBullet(f37_arg0)
-    
+
 end
 
 function EZOP_DBChk_PowerBullet(f38_arg0)
-    
+
 end
 
 function EZOP_DBChk_HomingBullet(f39_arg0)
-    
+
 end
 
 local f0_local0 = 99993200
@@ -465,12 +431,10 @@ local f0_local5 = 99993230
 
 function EZOP_IsPossibleTurretMode(f40_arg0)
     return f40_arg0:HasSpecialEffectId(TARGET_SELF, f0_local0)
-    
 end
 
 function EZOP_IsPossibleTurretMode_SpEffectCommandShot(f41_arg0)
     return f41_arg0:HasSpecialEffectId(TARGET_SELF, f0_local5)
-    
 end
 
 function EZOP_IsTurretModeActive(f42_arg0)
@@ -480,7 +444,6 @@ function EZOP_IsTurretModeActive(f42_arg0)
     else
         return false
     end
-    
 end
 
 function EZOP_InitializeTurretMode(f43_arg0)
@@ -490,12 +453,10 @@ function EZOP_InitializeTurretMode(f43_arg0)
     if f43_arg0:HasSpecialEffectId(TARGET_SELF, f0_local0) or f43_arg0:HasSpecialEffectId(TARGET_SELF, f0_local3) then
         f43_arg0:SetNumber(VALUE_ID_EZOP_IsTurretMode, 1)
     end
-    
 end
 
 function EZOP_FinalizeTurretMode(f44_arg0)
     f44_arg0:SetNumber(VALUE_ID_EZOP_IsTurretMode, 0)
-    
 end
 
 function EZOP_IsTurretMode(ai, f45_arg1)
@@ -519,7 +480,6 @@ function EZOP_IsTurretMode(ai, f45_arg1)
         end
     end
     return false
-    
 end
 
 function EZOP_ChkTurretMode(ai)
@@ -550,25 +510,23 @@ function EZOP_ChkTurretMode(ai)
             end
         end
     end
-    
 end
 
-EZOP_ReactionType_WhenPlayerDies = {_UNIQUE = 0, _WAIT = 1, _WALK_TO_PLAYER = 2}
+EZOP_ReactionType_WhenPlayerDies = { _UNIQUE = 0, _WAIT = 1, _WALK_TO_PLAYER = 2 }
 
 function EZOP_CommonReactionWhenPlayerDies_SetUp(f47_arg0, f47_arg1)
     if f47_arg0:HasSpecialEffectId(TARGET_SELF, 99993101) == false then
         return
     end
-    OpSetArr[f47_arg1][980000] = function (f48_arg0, f48_arg1)
+    OpSetArr[f47_arg1][980000] = function(f48_arg0, f48_arg1)
         local f48_local0 = EZOPArray.new()
         local f48_local1 = 1
         local f48_local2 = TARGET_SELF
         f48_local0:Add(EZOP_SetAct_ClearOperation(f48_arg0, f48_local1))
         return f48_local0
-        
     end
 
-    OpSetArr[f47_arg1][980010] = function (ai, f49_arg1)
+    OpSetArr[f47_arg1][980010] = function(ai, f49_arg1)
         local f49_local0 = EZOPArray.new()
         local f49_local1 = ai:IsLanding()
         local distance = ai:GetDist(TARGET_ENE_0)
@@ -581,25 +539,23 @@ function EZOP_CommonReactionWhenPlayerDies_SetUp(f47_arg0, f47_arg1)
             local f49_local7 = 50
             local f49_local8 = {}
 
-            local f49_local9 = function (f50_arg0)
-                
+            local f49_local9 = function(f50_arg0)
+
             end
 
             local f49_local10 = nil
             local f49_local11 = nil
-            local f49_local12 = {0, 360, -10, 9999}
+            local f49_local12 = { 0, 360, -10, 9999 }
             local f49_local13 = false
-            f49_local0:Add(EZOP_SetAct_ApproachTarget(ai, f49_local3, f49_local4, f49_local5, f49_local6, f49_local7, f49_local8, f49_local9, f49_local10, f49_local11, f49_local12, TransAct, f49_local13))
+            f49_local0:Add(EZOP_SetAct_ApproachTarget(ai, f49_local3, f49_local4, f49_local5, f49_local6, f49_local7,
+                f49_local8, f49_local9, f49_local10, f49_local11, f49_local12, TransAct, f49_local13))
         else
             local f49_local3 = 1
             local f49_local4 = TARGET_SELF
             f49_local0:Add(EZOP_SetAct_Wait(ai, f49_local3, f49_local4))
         end
         return f49_local0
-        
     end
-
-    
 end
 
 function EZOP_CommonReactionWhenPlayerDies(f51_arg0, f51_arg1, f51_arg2)
@@ -613,57 +569,46 @@ function EZOP_CommonReactionWhenPlayerDies(f51_arg0, f51_arg1, f51_arg2)
     else
     end
     return true
-    
 end
 
 function EZOP_IsSearchEvAssetShootPoint(f52_arg0)
     return f52_arg0:HasSpecialEffectId(TARGET_SELF, 99993400)
-    
 end
 
 function EZOP_IsLocalPlayerSearchEvAssetShootPoint(f53_arg0)
     return f53_arg0:HasSpecialEffectId(TARGET_ENE_0, 99993410)
-    
 end
 
 function EZOP_IsNpcAcDamaged_Stagger_S(f54_arg0)
     return f54_arg0:HasSpecialEffectId(TARGET_SELF, 99997000)
-    
 end
 
 function EZOP_IsNpcAcDamaged_Stagger_L(f55_arg0)
     return f55_arg0:HasSpecialEffectId(TARGET_SELF, 99997010)
-    
 end
 
 function EZOP_IsNpcAcDamaged_BlowAway(f56_arg0)
     return f56_arg0:HasSpecialEffectId(TARGET_SELF, 99997020)
-    
 end
 
 function EZOP_IsNpcAcDamaged_GuardBreak(f57_arg0)
     return f57_arg0:HasSpecialEffectId(TARGET_SELF, 99997030)
-    
 end
 
 function EZOP_IsNpcAcHovering(f58_arg0)
     return not (f58_arg0:GetBehaviorActionType(TARGET_SELF) ~= AiActionType_NPAC_Hover)
-    
 end
 
 function EZOP_IsNpcAcAssultBoosting(f59_arg0)
     return not (f59_arg0:GetBehaviorActionType(TARGET_SELF) ~= AiActionType_AssultBoosting)
-    
 end
 
 function EZOP_ChkFunc_Success(f60_arg0, f60_arg1, f60_arg2)
     return "next"
-    
 end
 
 function EZOP_ChkFunc_Failure(f61_arg0, f61_arg1, f61_arg2)
     return nil
-    
 end
 
 function EZOP_ChkFunc_TargetDist(f62_arg0, f62_arg1, f62_arg2)
@@ -673,20 +618,18 @@ function EZOP_ChkFunc_TargetDist(f62_arg0, f62_arg1, f62_arg2)
     else
         return nil
     end
-    
 end
 
-function EZOP_ChkFunc_InsideRange(f63_arg0, f63_arg1, f63_arg2)
-    local f63_local0 = f63_arg2[1]
-    local f63_local1 = f63_arg2[2]
-    local f63_local2 = f63_arg2[3]
-    local f63_local3 = f63_arg2[4]
-    if EZOP_InsideRange(f63_arg0, f63_local0, f63_local1, f63_local2, f63_local3) then
+function EZOP_ChkFunc_InsideRange(ai, f63_arg1, args_table)
+    local angle_min = args_table[1]
+    local angle_max = args_table[2]
+    local range_min = args_table[3]
+    local range_max = args_table[4]
+    if EZOP_InsideRange(ai, angle_min, angle_max, range_min, range_max) then
         return "next"
     else
         return nil
     end
-    
 end
 
 function ChkFunc_HAGI_InsideRange(f64_arg0, f64_arg1, f64_arg2)
@@ -699,12 +642,10 @@ function ChkFunc_HAGI_InsideRange(f64_arg0, f64_arg1, f64_arg2)
     else
         return nil
     end
-    
 end
 
 function EZOP_GetCurrentOpID(f65_arg0)
     return f65_arg0:GetNumber(VALUE_ID_OP_SET_TABLE_ID)
-    
 end
 
 function EZOP_CFAF_IsInsideTarget(f66_arg0, f66_arg1)
@@ -719,7 +660,6 @@ function EZOP_CFAF_IsInsideTarget(f66_arg0, f66_arg1)
     else
         return not f66_arg0:IsInsideTargetEx(f66_local0, f66_local1, f66_local2, f66_local3, f66_local4)
     end
-    
 end
 
 function EZOP_CFAF_IsFrontTarget(f67_arg0, f67_arg1)
@@ -729,8 +669,7 @@ function EZOP_CFAF_IsFrontTarget(f67_arg0, f67_arg1)
     local f67_local3 = f67_arg1[2]
     local f67_local4 = f67_arg1[3]
     local f67_local5 = f67_arg1[4]
-    return EZOP_CFAF_IsInsideTarget(f67_arg0, {f67_local0, f67_local1, f67_local2, f67_local3, f67_local4, f67_local5})
-    
+    return EZOP_CFAF_IsInsideTarget(f67_arg0, { f67_local0, f67_local1, f67_local2, f67_local3, f67_local4, f67_local5 })
 end
 
 function EZOP_CFAF_IsBackTarget(f68_arg0, f68_arg1)
@@ -740,8 +679,7 @@ function EZOP_CFAF_IsBackTarget(f68_arg0, f68_arg1)
     local f68_local3 = f68_arg1[2]
     local f68_local4 = f68_arg1[3]
     local f68_local5 = f68_arg1[4]
-    return EZOP_CFAF_IsInsideTarget(f68_arg0, {f68_local0, f68_local1, f68_local2, f68_local3, f68_local4, f68_local5})
-    
+    return EZOP_CFAF_IsInsideTarget(f68_arg0, { f68_local0, f68_local1, f68_local2, f68_local3, f68_local4, f68_local5 })
 end
 
 function EZOP_CFAF_IsLeftTarget(f69_arg0, f69_arg1)
@@ -751,8 +689,7 @@ function EZOP_CFAF_IsLeftTarget(f69_arg0, f69_arg1)
     local f69_local3 = f69_arg1[2]
     local f69_local4 = f69_arg1[3]
     local f69_local5 = f69_arg1[4]
-    return EZOP_CFAF_IsInsideTarget(f69_arg0, {f69_local0, f69_local1, f69_local2, f69_local3, f69_local4, f69_local5})
-    
+    return EZOP_CFAF_IsInsideTarget(f69_arg0, { f69_local0, f69_local1, f69_local2, f69_local3, f69_local4, f69_local5 })
 end
 
 function EZOP_CFAF_IsRightTarget(f70_arg0, f70_arg1)
@@ -762,15 +699,12 @@ function EZOP_CFAF_IsRightTarget(f70_arg0, f70_arg1)
     local f70_local3 = f70_arg1[2]
     local f70_local4 = f70_arg1[3]
     local f70_local5 = f70_arg1[4]
-    return EZOP_CFAF_IsInsideTarget(f70_arg0, {f70_local0, f70_local1, f70_local2, f70_local3, f70_local4, f70_local5})
-    
+    return EZOP_CFAF_IsInsideTarget(f70_arg0, { f70_local0, f70_local1, f70_local2, f70_local3, f70_local4, f70_local5 })
 end
 
 function EZOP_DBG_DebugInputParam(f71_arg0, f71_arg1)
     return f71_arg0:GetNumber(f71_arg1)
-    
 end
 
 PRINT_TEXT(LogHeader_Plan .. "UsefulFunc: UsefulFunc OK")
 PRINT_TEXT("-----" .. LogHeader_Plan .. "UsefulFunc Complete-----")
-

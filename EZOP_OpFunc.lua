@@ -582,7 +582,8 @@ local local_EZOP_OpFunc_TriggerOperation = function(ai, args_table, trigger_op_i
     else
         local action_to_perform = args_table[1][trigger_op_index]
         local action_type = action_to_perform[0]
-        local unk_float_arg = args_table[2]    --Remember! This isn't the action, but the table defined in EZOP_SetAct_ApproachTarget for EZOP_OPERATION.MOVE_APPROACH!
+        local unk_float_arg = args_table
+            [2] --Remember! This isn't the action, but the table defined in EZOP_SetAct_ApproachTarget for EZOP_OPERATION.MOVE_APPROACH!
         local target = action_to_perform[2]
         local weapon_slot = action_to_perform[3]
         local weapon_action = action_to_perform[4]
@@ -590,14 +591,16 @@ local local_EZOP_OpFunc_TriggerOperation = function(ai, args_table, trigger_op_i
         local f33_local7 = action_to_perform[6]
         local f33_local8 = action_to_perform[7]
         local f33_local9 = action_to_perform[8]
-        local ai_trigger_input_type = action_to_perform[9]  --This basically distinguishes between charging vs holding vs pressing once.
+        local ai_trigger_input_type = action_to_perform
+            [9] --This basically distinguishes between charging vs holding vs pressing once.
         local f33_local11 = action_to_perform[10]
         local f33_local12 = action_to_perform[11]
         local f33_local13 = action_to_perform[12]
         if action_type == "NpcAc" then
             local f33_local14 = action_to_perform[13]
             ai:SetupOperationLocal(AI_OPERATION_NpcAc_Weapon_Ver100, target, weapon_slot, weapon_action, unk_float_arg,
-                f33_local6, f33_local7, f33_local8, f33_local9, ai_trigger_input_type, f33_local11, f33_local12, f33_local13,
+                f33_local6, f33_local7, f33_local8, f33_local9, ai_trigger_input_type, f33_local11, f33_local12,
+                f33_local13,
                 f33_local14)
         elseif action_type == "NpcAc_WepChange" then
             ai:ChangeWeapon(weapon_slot)
@@ -606,7 +609,8 @@ local local_EZOP_OpFunc_TriggerOperation = function(ai, args_table, trigger_op_i
         elseif action_type == "NpcAc_WepPurge" then
             ai:PurgeWeapon(weapon_slot)
         else
-            ai:SetupOperationLocal(AI_OPERATION_Weapon_Ver102, target, weapon_slot, weapon_action, unk_float_arg, f33_local6,
+            ai:SetupOperationLocal(AI_OPERATION_Weapon_Ver102, target, weapon_slot, weapon_action, unk_float_arg,
+                f33_local6,
                 f33_local7, f33_local8, f33_local9, ai_trigger_input_type, f33_local11, f33_local12, f33_local13)
         end
     end
@@ -646,6 +650,7 @@ local f0_local5 = function(ai, f34_arg1, f34_arg2, f34_arg3, f34_arg4, f34_arg5,
 end
 
 function EZOP_OpFunc_Wait(ai, f35_arg1, f35_arg2, arg_map)
+    Log("EZOP_OpFunc_Wait fired")
     local f35_local0 = arg_map[2]
     local f35_local1 = arg_map[3]
     local f35_local2 = arg_map[4]
@@ -1734,6 +1739,7 @@ local real_movement_func = function(ai, f71_arg1, f71_arg2, f71_arg3, f71_arg4)
 end
 
 function EZOP_OpFunc_MoveType(ai, f72_arg1, f72_arg2, f72_arg3)
+    Log("EZOP_OpFunc_MoveType fired (aka, quickboost_formal)")
     local f72_local0 = f72_arg3[2]
     local f72_local1 = f72_arg3[3]
     local f72_local2 = f72_arg3[4]
